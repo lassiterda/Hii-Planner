@@ -56,7 +56,8 @@ function getSuggestions(obj) {
         return ele;
       }
     });
-  return weatherWithSuggestions
+  obj.arrForcast = weatherWithSuggestions
+  return obj
 }
 
 //function which takes in a string (forecast icon indicator, and returns the URL to the correct forecast image);

@@ -37,11 +37,11 @@ function dispWeather(obj, idx) {
   $("#suggestions-container").empty();
   carouselInit();
 
-  $("#pretty-address").html("<i class='material-icons amber-text'>&#xE55F;</i>  " + obj.prettyAddress)
+  $("#pretty-address").html("<i class='material-icons red-text'>&#xE55F;</i>  " + obj.prettyAddress)
   obj.arrForcast.forEach(function(ele, idx) {
      //create forecast div
     var panelItem = $("<div>");
-    panelItem.addClass("carousel-item indigo accent-4 amber-text");
+    panelItem.addClass("carousel-item indigo accent-3 white-text");
     panelItem.attr("data-forecast-day", idx);
 
     panelItem.append(makeForecastPanel(ele));
@@ -104,13 +104,14 @@ function makeForecastPanel(obj) {
 //function to return an HTML list of the suggestions for a particular day
 function makeSuggestionsList(arr){
   var collectionList = $("<ul>")
+  collectionList.id="suggestion";
   collectionList.addClass("collection with-header");
-  collectionList.append("<li class='collection-header grey darken-3 amber-text'><h5>Local Suggestions:</h5></li>");
+  collectionList.append("<li class='collection-header grey darken-3 blue-text center'><h5>Local Spots</h5></li>");
 
 
   arr.forEach(function(ele){
     var collectionItem = $("<li>")
-    collectionItem.html("<a href='#' class='collection-item'>" + ele + "</a>");
+    collectionItem.html("<a href='#' class='collection-item btn btn-wave'>" + ele + "</a>");
     collectionList.append(collectionItem);
   });
   return collectionList;

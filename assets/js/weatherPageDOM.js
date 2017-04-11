@@ -118,7 +118,7 @@ function makeSuggestionsList(arr){
 
 //function to create a new carousel (to avoid the blank issue)
 function carouselInit() {
-  var carouselTemplate = "<div class='col s12 center-align  grey darken-3 white-text'><h4 id='pretty-address'></h4></div><div class='carousel carousel-slider center valign-wrapper' data-indicators='true'id='weather-slider'><a class='waves-effect valign left-align' id='prev-day'><i class='material-icons'>&#xE314;</i></a><a class='waves-effect valign right-align' id='next-day'><i class='material-icons'>&#xE315;</i></a>"
+  var carouselTemplate = "<div class='col s12 center-align grey darken-3 white-text'><h4 id='pretty-address'></h4></div><div class='carousel carousel-slider center valign-wrapper' data-indicators='true'id='weather-slider'><a class='waves-effect valign left-align' id='prev-day'><i class='material-icons'>&#xE314;</i></a><a class='waves-effect valign right-align' id='next-day'><i class='material-icons'>&#xE315;</i></a>"
 
   $("#forecast-container").append(carouselTemplate);
 

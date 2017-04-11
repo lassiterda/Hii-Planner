@@ -37,11 +37,11 @@ function dispWeather(obj, idx) {
   $("#suggestions-container").empty();
   carouselInit();
 
-  $("#pretty-address").html("<i class='material-icons'>&#xE55F;</i>  " + obj.prettyAddress)
+  $("#pretty-address").html("<i class='material-icons amber-text'>&#xE55F;</i>  " + obj.prettyAddress)
   obj.arrForcast.forEach(function(ele, idx) {
      //create forecast div
     var panelItem = $("<div>");
-    panelItem.addClass("carousel-item blue lighten-1 white-text");
+    panelItem.addClass("carousel-item indigo accent-4 amber-text");
     panelItem.attr("data-forecast-day", idx);
 
     panelItem.append(makeForecastPanel(ele));
@@ -77,7 +77,7 @@ function makeForecastPanel(obj) {
   var forecastIconDiv = $("<div>");
 
   //create the overall forecast div and add its constituent parts
-  forecastDiv.addClass("forecast-wrapper container");
+  forecastDiv.addClass("forecast-wrapper container white-text");
     forecastDiv.append("<p>"+ obj.date.weekday + "</p>")
     forecastDiv.append("<h5 class='forecast-date'>" + obj.date.monthname + " " + obj.date.day + ", " + obj.date.year + "</h5>")
     forecastDiv.append(forecastSimpleDiv);
@@ -105,12 +105,12 @@ function makeForecastPanel(obj) {
 function makeSuggestionsList(arr){
   var collectionList = $("<ul>")
   collectionList.addClass("collection with-header");
-  collectionList.append("<li class='collection-header'><h5>Maybe you should...</h5></li>");
+  collectionList.append("<li class='collection-header grey darken-3 amber-text'><h5>Local Suggestions:</h5></li>");
+
 
   arr.forEach(function(ele){
     var collectionItem = $("<li>")
-    collectionItem.addClass("collection-item");
-    collectionItem.html("<a href='#'>" + ele + "</a>");
+    collectionItem.html("<a href='#' class='collection-item'>" + ele + "</a>");
     collectionList.append(collectionItem);
   });
   return collectionList;
@@ -118,7 +118,7 @@ function makeSuggestionsList(arr){
 
 //function to create a new carousel (to avoid the blank issue)
 function carouselInit() {
-  var carouselTemplate = "<div class='col s12 center-align  blue darken-2 white-text'><h4 id='pretty-address'></h4></div><div class='carousel carousel-slider center valign-wrapper' data-indicators='true'id='weather-slider'><a class='waves-effect valign left-align' id='prev-day'><i class='material-icons'>&#xE314;</i></a><a class='waves-effect valign right-align' id='next-day'><i class='material-icons'>&#xE315;</i></a>"
+  var carouselTemplate = "<div class='col s12 center-align  grey darken-3 white-text'><h4 id='pretty-address'></h4></div><div class='carousel carousel-slider center valign-wrapper' data-indicators='true'id='weather-slider'><a class='waves-effect valign left-align' id='prev-day'><i class='material-icons'>&#xE314;</i></a><a class='waves-effect valign right-align' id='next-day'><i class='material-icons'>&#xE315;</i></a>"
 
   $("#forecast-container").append(carouselTemplate);
 

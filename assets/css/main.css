@@ -1,22 +1,78 @@
 body   {
-	background-image: url("../images/earth.jpg");
+	background-image: url("../images/deepForest.jpg");
 	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+	top: 0;
+	height: 100%;
+}
+
+#location {
+margin-bottom: 0;
+margin-top: 5px;
+font-weight: 900;
+}
+
+#location:focus, #location:visited {
+	border: 1.5px solid #43a047;
+	border-radius: 2px;
+	box-shadow: 0 1px 0 0 #43a047;
+	background-color: #ccc;
+	color: #444;
+	font-weight: 900;
+	padding: 0 0 0  10px;
+}
+nav .row {
+	margin-bottom: 0;
+	padding: 0;
+}
+nav {
+	margin-bottom: 20px;
+}
+
+.tabs-transparent {
+	text-align: center;
+}
+
+.tabs-transparent li {
+ display: inline-block;
+ float: none;border-radius: 5px;
+ padding: 10px 0;
+}
+
+.tabs .indicator {
+    background-color: #43a047;
+}
+#submit {
+	bottom: 30px;
+	right: 30px;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 960px) {
+
+#submit {
+	bottom: -40px;
+	right: 10px;
+}
+.container {
+	width: 100%;
+}
 }
 
 
-h4    	{
-	color: #ffb300;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-}
+  main {
+    flex: 1 0 auto;
+  }
 
-#suggestion	{
-	background-color: #006064;
-}
-
-
-#pretty-address	{
-	color: #40c4ff;
+footer {
+	margin-bottom: -5px;
 }

@@ -1,13 +1,14 @@
 //click handler to take input from the user, then call getWeatherData, getSuggestions, and dispWeather.
 $("#submit").on("click", function() {
   event.preventDefault();
+  console.log("Clicked"   )
     var input  = $("#location").val().trim();
     if (input.length > 0) {
       getWeatherData(input)
         .then(function(weatherData) {
           weatherWithSuggest = getSuggestions(weatherData)
           dispWeather(weatherWithSuggest, $("#submit").attr("data-forecast-day"));
-          $("main").fadeTo(300, 1)
+          $("main").fadeTo(1000, 1)
         });
     }
     else {
@@ -15,17 +16,19 @@ $("#submit").on("click", function() {
     }
 });
 
-//click handler to control the 'date-btn buttons, including their styling and manipulation of the data attributes 
+//click handler to control the 'date-btn buttons, including their styling and manipulation of the data attributes
 $(".date-btn").on("click", function(event) {
   var thoseButtons = $(".date-btn");
   var thisButton = $(event.target);
 
-  thoseButtons.removeClass("darken-2");
+  thoseButtons.removeClass("lighten-2");
+  thoseButtons.addClass("darken-3");
   thoseButtons.removeAttr("style");
   thoseButtons.attr("data-selected", "false");
 
   thisButton.css("box-shadow", "none");
-  thisButton.addClass("darken-2");
+  thisButton.removeClass("darken-3");
+  thisButton.addClass("lighten-1");
   thisButton.attr("data-selected", "true");
 
   $("#submit").attr("data-forecast-day", thisButton.attr("data-day"))
@@ -41,7 +44,7 @@ function dispWeather(obj, idx) {
   obj.arrForcast.forEach(function(ele, idx) {
      //create forecast div
     var panelItem = $("<div>");
-    panelItem.addClass("carousel-item indigo accent-3 white-text");
+    panelItem.addClass("carousel-item blue lighten-1 white-text");
     panelItem.attr("data-forecast-day", idx);
 
     panelItem.append(makeForecastPanel(ele));
@@ -106,12 +109,12 @@ function makeSuggestionsList(arr){
   var collectionList = $("<ul>")
   collectionList.id="suggestion";
   collectionList.addClass("collection with-header");
-  collectionList.append("<li class='collection-header grey darken-3 blue-text center'><h5>Local Spots</h5></li>");
+  collectionList.append("<li class='collection-header grey darken-3 white-text center'><h5>Maybe you should...</h5></li>");
 
 
   arr.forEach(function(ele){
     var collectionItem = $("<li>")
-    collectionItem.html("<a href='#' class='collection-item btn btn-wave'>" + ele + "</a>");
+    collectionItem.html("<a href='#' class='collection-item center'>" + ele + "</a>");
     collectionList.append(collectionItem);
   });
   return collectionList;

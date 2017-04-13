@@ -4,12 +4,24 @@ function getWeatherData(loc) {
     var prettyAddress;
     var strLatLong;
     var arrForcast;
+    var lat
+    var long
 
+    var scope = {};
+
+    return getJSON().then(function(response) {
+      scope.lat = response;
+      return getJSON();
+    }).then((response) => {
+      return Promise.resolve({ response })
+    });
 
     //Returns a Promise (API call to Google with Geocaching to get Lat/Lng strng)...
     return $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(loc), function(response) {
+            lat = response.results[0].geometry.location.lat;
+            long = response.results[0].geometry.location.lng;
             prettyAddress = response.results[0].formatted_address
-            strLatLong = response.results[0].geometry.location.lat + "," + response.results[0].geometry.location.lng;
+            strLatLong = lat + "," + long;
         })
         //Which is passed to .then, which returns a Promise
         .then(function() {
@@ -29,9 +41,11 @@ function getWeatherData(loc) {
                 arrForcast[index].forecastText = ele;
               })
             })
-            .then(function(data) {
+            .then(function(yelpData) {
                 return {
                     prettyAddress: prettyAddress,
+                    lat: lat,
+                    long: long,
                     arrForcast: arrForcast
                 };
             });

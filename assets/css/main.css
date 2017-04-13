@@ -53,8 +53,8 @@ nav {
 }
 
 #footerImages	{
-	max-height: 50px;
-	max-width: 100px;
+	max-height: 30px;
+	max-width: 60px;
 	margin: 0 20 0 20;
 }
 
@@ -82,4 +82,14 @@ body {
 
 footer {
 	margin-bottom: -5px;
+}
+
+h5{
+	font-family: 'Vibur', cursive;
+	
+}
+
+.brand-logo{
+	font-family: 'Pacifico', cursive;
+
 }

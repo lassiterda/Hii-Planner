@@ -56,7 +56,7 @@ function dispWeather(obj, idx) {
   $('.carousel').carousel({fullWidth: true, onCycleTo:function(data) {
     $("#suggestions-container").empty();
     $("#suggestions-container").append(makeSuggestionsList(weatherWithSuggest.arrForcast[$(data).attr("data-forecast-day")].suggestions));
-
+$('.collapsible').collapsible();
     if ($(data).attr("day") === "0") {
       $("#next-day").addClass("disabled")
     }
@@ -112,11 +112,21 @@ function makeSuggestionsList(arr){
   collectionList.append("<li class='collection-header grey darken-3 white-text center'><h5>Maybe you should...</h5></li>");
 
 
+  var collapsibleList = $('<ul class="collapsible" data-collapsible="accordion">');
   arr.forEach(function(ele){
-    var collectionItem = $("<li>")
-    collectionItem.html("<a href='#' class='collection-item center collapsible popout' data-coll>" + ele + "</a>");
-    collectionList.append(collectionItem);
+
+    var collectionItem = $("<li>");
+    collectionItem.append('<div class="collapsible-header"><i class="material-icons">filter_drama</i>'+ele+'</div><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>');
+    // collectionItem.html("<a href='#' class='collection-item center'>" + ele + "</a>");
+    collapsibleList.append(collectionItem);
+
+ 
+
   });
+
+
+  collectionList.append(collapsibleList);
+  $('.collapsible').collapsible();
   return collectionList;
 };
 

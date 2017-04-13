@@ -114,7 +114,7 @@ function makeSuggestionsList(arr){
 
   arr.forEach(function(ele){
     var collectionItem = $("<li>")
-    collectionItem.html("<a href='#' class='collection-item center'>" + ele + "</a>");
+    collectionItem.html("<a href='#' class='collection-item center collapsible popout' data-coll>" + ele + "</a>");
     collectionList.append(collectionItem);
   });
   return collectionList;
@@ -135,3 +135,30 @@ function carouselInit() {
     $('.carousel.carousel-slider').carousel('next');
   })
 }
+
+
+
+//Function for submit button effects
+
+$("#submit").click(function(){
+    $("#submit").removeClass("pulse");
+});
+
+
+
+
+
+
+
+  $('#location').on('input', function() {
+      $this = $(this);
+      if($this.val().length > 1){
+        $("#submit").addClass("pulse");
+      }
+      else {
+       $("#submit").removeClass("pulse");
+      }
+    });
+
+
+

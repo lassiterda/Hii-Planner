@@ -114,10 +114,14 @@ function makeSuggestionsList(arr){
 
   var collapsibleList = $('<ul class="collapsible" data-collapsible="accordion">');
   arr.forEach(function(ele){
+
     var collectionItem = $("<li>");
     collectionItem.append('<div class="collapsible-header"><i class="material-icons">filter_drama</i>'+ele+'</div><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>');
     // collectionItem.html("<a href='#' class='collection-item center'>" + ele + "</a>");
     collapsibleList.append(collectionItem);
+
+ 
+
   });
 
 
@@ -141,3 +145,30 @@ function carouselInit() {
     $('.carousel.carousel-slider').carousel('next');
   })
 }
+
+
+
+//Function for submit button effects
+
+$("#submit").click(function(){
+    $("#submit").removeClass("pulse");
+});
+
+
+
+
+
+
+
+  $('#location').on('input', function() {
+      $this = $(this);
+      if($this.val().length > 1){
+        $("#submit").addClass("pulse");
+      }
+      else {
+       $("#submit").removeClass("pulse");
+      }
+    });
+
+
+

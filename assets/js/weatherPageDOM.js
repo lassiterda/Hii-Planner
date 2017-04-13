@@ -138,15 +138,11 @@ function carouselInit() {
 
 
 
-//Function for submit button effects
+//Functions for submit button effects
 
 $("#submit").click(function(){
     $("#submit").removeClass("pulse");
 });
-
-
-
-
 
 
 
@@ -159,6 +155,4 @@ $("#submit").click(function(){
        $("#submit").removeClass("pulse");
       }
     });
-
-
-
+  

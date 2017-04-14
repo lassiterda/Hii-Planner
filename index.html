@@ -3,8 +3,10 @@
     <meta charset="utf-8">
     <title>Hii</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+        <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <!-- Materialize CSS and JS -->
   <!-- Compiled and minified CSS -->
   <link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet">
@@ -21,15 +23,15 @@
 </head>
 <body>
   <nav class="nav-extended grey darken-3">
-    <a href="#" class="brand-logo">Hii!!!</a>
+    <a href="#" class="brand-logo">Hii!</a>
     <div class="nav-wrapper row">
       <div class="col s12 m12 l6 offset-l3">
-        <input id="location" type="search" required placeholder="LOCATION">
+        <input id="location" type="search" required placeholder="ENTER LOCATION">
       </div>
     </div>
      <div class="nav-content">
       <ul class="tabs tabs-transparent center-align">
-        <li class="tab date-btn"><a class="active date-btn  grey darken-3" href="#" data-day="0">TODAY</a></li>
+        <li class="tab date-btn"><a class=" date-btn  grey darken-3" href="#" data-day="0">TODAY</a></li>
         <li class="tab date-btn"><a class="date-btn grey darken-3" href="#" data-day="1">TOMORROW</a></li>
         <li class="tab date-btn"><a class="date-btn grey darken-3" href="#" data-day="4">5 days</a></li>
         <li class="tab date-btn"><a class="date-btn grey darken-3" href="#" data-day="6">7 days</a></li>
@@ -52,15 +54,12 @@
   </main>
 
 <footer class="grey darken-3 footer-copyright valign">
-    <div class="container center white-text">
-    <h5>Hii</h5>
-    <div class="row">
-    
-      <a href="https://www.yelp.com"><img id= "footerImages" src="assets/images/yelp.jpg"></a>
-      <a href="https://www.google.com/maps"><img id= "footerImages" src="assets/images/googlemaps.jpg"></a>
-      <a href="https://www.wunderground.com/"><img id= "footerimages" src="assets/images/wunderground.jpg"></a>
-    
-    </div>
+    <div class="center white-text">
+
+      <a href="https://www.yelp.com"><img class="footerImages" id="yelp" src="assets/images/yelp.jpg"></a>
+      <a href="https://www.wunderground.com/"><img class="footerImages" id="weatherUnderground" src="assets/images/wunderground.png"></a>
+      <a href="https://www.google.com/maps"><img class="footerImages" id="gmaps" src="assets/images/googlemaps.jpg"></a>
+
     </div>
 </footer>
   <script src="assets/js/getWeather.js"></script>

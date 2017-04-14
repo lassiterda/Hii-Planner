@@ -21,14 +21,11 @@ $(".date-btn").on("click", function(event) {
   var thoseButtons = $(".date-btn");
   var thisButton = $(event.target);
 
-  thoseButtons.removeClass("lighten-2");
   thoseButtons.addClass("darken-3");
   thoseButtons.removeAttr("style");
   thoseButtons.attr("data-selected", "false");
 
   thisButton.css("box-shadow", "none");
-  thisButton.removeClass("darken-3");
-  thisButton.addClass("lighten-1");
   thisButton.attr("data-selected", "true");
 
   $("#submit").attr("data-forecast-day", thisButton.attr("data-day"))
@@ -113,14 +110,15 @@ function makeSuggestionsList(arr){
 
 
   var collapsibleList = $('<ul class="collapsible" data-collapsible="accordion">');
+  collapsibleList.addClass("suggestions-list center")
   arr.forEach(function(ele){
 
     var collectionItem = $("<li>");
-    collectionItem.append('<div class="collapsible-header"><i class="material-icons">filter_drama</i>'+ele+'</div><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>');
+    collectionItem.append('<a class="collapsible-header collection-item">'+ele+'</a><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>');
     // collectionItem.html("<a href='#' class='collection-item center'>" + ele + "</a>");
     collapsibleList.append(collectionItem);
 
- 
+
 
   });
 
@@ -165,4 +163,3 @@ $("#submit").click(function(){
        $("#submit").removeClass("pulse");
       }
     });
-  

@@ -20,34 +20,34 @@ function getYelpData(lat, long, term) {
 function getRatingStars(float) {
   switch(float) {
     case 1:
-      return "assets/images/regular_1.png"
+      return "assets/images/yelpStars/regular_1.png"
       break;
     case 1.5:
-      return "assets/images/regular_1_half.png"
+      return "assets/images/yelpStars/regular_1_half.png"
       break;
     case 2:
-      return "assets/images/regular_2.png"
+      return "assets/images/yelpStars/regular_2.png"
       break;
     case 2.5:
-      return "assets/images/regular_2_half.png"
+      return "assets/images/yelpStars/regular_2_half.png"
       break;
     case 3:
-      return "assets/images/regular_3.png"
+      return "assets/images/yelpStars/regular_3.png"
       break;
     case 3.5:
-      return "assets/images/regular_3_half.png"
+      return "assets/images/yelpStars/regular_3_half.png"
       break;
     case 4:
-      return "assets/images/regular_4.png"
+      return "assets/images/yelpStars/regular_4.png"
       break;
     case 4.5:
-      return "assets/images/regular_4_half.png"
+      return "assets/images/yelpStars/regular_4_half.png"
       break;
     case 5:
-      return "assets/images/regular_5.png"
+      return "assets/images/yelpStars/regular_5.png"
       break;
     default:
-      return "assets/images/regular_0.png"
+      return "assets/images/yelpStars/regular_0.png"
       break;
   }
 }

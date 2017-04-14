@@ -1,7 +1,6 @@
 //click handler to take input from the user, then call getWeatherData, getSuggestions, and dispWeather.
 $("#submit").on("click", function() {
   event.preventDefault();
-  console.log("Clicked"   )
     var input  = $("#location").val().trim();
     if (input.length > 0) {
       getWeatherData(input)
@@ -10,6 +9,7 @@ $("#submit").on("click", function() {
           dispWeather(weatherWithSuggest, $("#submit").attr("data-forecast-day"));
           $("main").fadeTo(1000, 1)
         });
+
     }
     else {
       //alert that they need to enter a location AND select a date
@@ -116,8 +116,16 @@ function makeSuggestionsList(arr){
   arr.forEach(function(ele){
 
     var collectionItem = $("<li>");
-    collectionItem.append('<a class="collapsible-header collection-item"> '+ ele +'</a><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>');
-    // collectionItem.html("<a href='#' class='collection-item center'>" + ele + "</a>");
+    collectionItem.append('<a class="collapsible-header collection-item suggestion-item"> '+ ele +'</a><div class="collapsible-body"></div>');
+
+    $(collectionItem).on("click", function() {
+  		console.log($(this).children(".collapsible-body"));
+  		getYelpData(weatherWithSuggest.lat, weatherWithSuggest.long, "Lakes")
+  			.then(function(response) {
+  				 $(collectionItem).children(".collapsible-body").append(makeYelpList(response));
+  			})
+  	});
+
     collapsibleList.append(collectionItem);
 
 

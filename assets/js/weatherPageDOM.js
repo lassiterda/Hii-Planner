@@ -116,12 +116,13 @@ function makeSuggestionsList(arr){
   arr.forEach(function(ele){
 
     var collectionItem = $("<li>");
-    collectionItem.append('<a class="collapsible-header collection-item suggestion-item"> '+ ele +'</a><div class="collapsible-body"></div>');
+    collectionItem.append('<a class="collapsible-header collection-item suggestion-item" data-term=' + ele.term + '> '+ ele.text +'</a><div class="collapsible-body"></div>');
 
-    $(collectionItem).on("click", function() {
-  		console.log($(this).children(".collapsible-body"));
-  		getYelpData(weatherWithSuggest.lat, weatherWithSuggest.long, "Lakes")
+    $(collectionItem).on("click", function(event) {
+  		console.log($(event.target).attr("data-term"));
+  		getYelpData(weatherWithSuggest.lat, weatherWithSuggest.long, $(event.target).attr("data-term"))
   			.then(function(response) {
+          console.log(response);
   				 $(collectionItem).children(".collapsible-body").append(makeYelpList(response));
   			})
   	});

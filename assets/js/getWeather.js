@@ -49,16 +49,33 @@ function getSuggestions(obj) {
   var weatherWithSuggestions = obj.arrForcast.map(function(ele) {
     switch (ele.icon) {
       case "clear": case "sunny": case "mostlysunny": case "partlysunny": case "mostlycloudy": case "partlycloudy":
-        ele.suggestions = ["Parks/hiking trails", "Music/Entertainment venues", "Golf","Lakes","Wine Tasting Rooms","Breweries"]
+        ele.suggestions = [
+          {text:"...find a park/hiking trail", term: "parks"},
+          {text:"...see a Concert", term: "concert venue"},
+          {text:"...find a golf course", term: "golf"},
+          {text:"...swim in a Lake", term: "lake"},
+          {text:"...find a Wine Tasting", term: "Wine"},
+          {text:"...hang at a Brewery", term: "brewery"},
+        ]
         return ele;
       case "cloudy": case "chancerain":case "rain": case "fog": case "hazy": case "chancetstorms":
-        ele.suggestions = ["Cafe/bars","Movies","Museums","Theaters","gym"];
+        ele.suggestions = [
+          {text:"...find a nice Cafe/bar", term:"cafe,bar"},
+          {text:"...go see a movie", term: "movie theater"},
+          {text:"...learn stuff at Museum", term:"museum"},
+          {text:"...get cultured at a Theatre", term:"theatre"},
+          {text:"...hit the Gym", term:"gym"}];
         return ele;
       case "sleet":	case "snow":  case "flurries":  case "chanceflurries":  case "chancesleet":	case "chancesnow":
-        ele.suggestions = ["Takeout/Pizza","Rent a Movie","Bars/Cafes","ski shops","grocery stores"]
+        ele.suggestions = [
+        {text:"...order some Takeout (Pizza maybe?)", term:"takeout,pizza"},
+        {text:"...rent a Movie", term:"movie"},
+        {text:"...find a nice Cafe/bar", term:"cafe,bar"},
+        {text:"...find a ski shop", term:"ski shop"},
+        {text:"...stock up for the Snowpocolypse", term:"grocery,costco,target"}];
         return ele;
       default:
-        ele.suggestions = ["honestly I'm not sure how it is..."]
+        ele.suggestions = ["...honestly I'm not sure... feeling lucky?"]
         return ele;
       }
     });

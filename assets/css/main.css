@@ -95,6 +95,9 @@ nav {
 	border: none;
 }
 
+.suggestions-list {
+	margin: 0;
+}
 .collapsible-body {
 	padding: 0;
 }

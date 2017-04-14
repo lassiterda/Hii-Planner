@@ -21,6 +21,8 @@ $(".date-btn").on("click", function(event) {
   var thoseButtons = $(".date-btn");
   var thisButton = $(event.target);
 
+  $(".carousel").carousel("set", thisButton.attr("data-day"));
+
   thoseButtons.addClass("darken-3");
   thoseButtons.removeAttr("style");
   thoseButtons.attr("data-selected", "false");
@@ -104,7 +106,7 @@ function makeForecastPanel(obj) {
 //function to return an HTML list of the suggestions for a particular day
 function makeSuggestionsList(arr){
   var collectionList = $("<ul>")
-  collectionList.id="suggestion";
+  collectionList.attr("id", "suggestions");
   collectionList.addClass("collection with-header");
   collectionList.append("<li class='collection-header grey darken-3 white-text center'><h5>Maybe you should...</h5></li>");
 
@@ -114,7 +116,7 @@ function makeSuggestionsList(arr){
   arr.forEach(function(ele){
 
     var collectionItem = $("<li>");
-    collectionItem.append('<a class="collapsible-header collection-item">'+ele+'</a><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>');
+    collectionItem.append('<a class="collapsible-header collection-item"> '+ ele +'</a><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>');
     // collectionItem.html("<a href='#' class='collection-item center'>" + ele + "</a>");
     collapsibleList.append(collectionItem);
 

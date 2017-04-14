@@ -10,7 +10,7 @@ function getYelpData(lat, long, term) {
            name: ele.name,
            address: ele.location.address1 + ", " + ele.location.zip_code,
            link: ele.url,
-           rating: ele.rating
+           rating_img: getRatingStars(ele.rating)
          }
       })
    })

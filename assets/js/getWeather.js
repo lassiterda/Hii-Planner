@@ -72,7 +72,7 @@ function getSuggestions(obj) {
         {text:"...rent a Movie", term:"movie"},
         {text:"...find a nice Cafe/bar", term:"cafe,bar"},
         {text:"...find a ski shop", term:"ski shop"},
-        {text:"...stock up for the Snowpocolypse", term:"grocery,costco,target"}];
+        {text:"...stock up for the Snowpocolypse", term:"grocery"}];
         return ele;
       default:
         ele.suggestions = ["...honestly I'm not sure... feeling lucky?"]
